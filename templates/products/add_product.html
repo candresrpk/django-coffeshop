@@ -1,0 +1,14 @@
+{% extends '../index.html' %}
+
+
+{% block title %}Create Product{% endblock  %}
+
+{% block content %}
+
+    <form action="{% url "products:add_product" %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Add</button>
+    </form>
+
+{% endblock  %}
